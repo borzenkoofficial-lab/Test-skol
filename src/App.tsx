@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import {
   ArrowDownRight, ArrowUpRight, Bell, Bookmark, Building2, Check, ChevronDown,
   CircleHelp, Compass, Grid2X2, Heart, House, Layers3, MapPin, Moon,
@@ -27,6 +27,18 @@ function App() {
   const [showNotifications, setShowNotifications] = useState(false);
   const [sent, setSent] = useState(false);
 
+  useEffect(() => {
+    if (!showContact && !showNotifications) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setShowContact(false);
+        setShowNotifications(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showContact, showNotifications]);
+
   const jumpTo = (id: string, label?: string) => {
     if (label) setActiveNav(label);
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -53,7 +65,7 @@ function App() {
             ))}
           </nav>
           <div className="sidebar-bottom">
-            <div className="avatar" aria-label="Команда СКОЛ">С</div>
+            <div className="avatar" role="img" aria-label="Команда СКОЛ">С</div>
             <div className="notification-wrap"><button className={showNotifications ? "nav-icon active" : "nav-icon"} aria-label="Уведомления" aria-expanded={showNotifications} onClick={() => setShowNotifications(value => !value)}><Bell size={17} /></button>{showNotifications && <div className="notice-popover" role="status"><b>Пока без уведомлений</b><span>Новые сообщения по объектам появятся здесь.</span></div>}</div>
             <button className="nav-icon" aria-label="Настройки темы" onClick={() => setDark(!dark)}>{dark ? <Sun size={18} /> : <Moon size={18} />}</button>
           </div>
@@ -112,11 +124,11 @@ function App() {
             <div className="featured-actions">
               <button className={liked ? 'action-button selected' : 'action-button'} onClick={() => setLiked(!liked)} aria-label="Отметить нравится"><Heart size={15} fill={liked ? 'currentColor' : 'none'} /><span>{liked ? '13' : '12'}</span></button>
               <button className={saved ? 'action-button selected' : 'action-button'} onClick={() => setSaved(!saved)} aria-label="Сохранить"><Bookmark size={15} fill={saved ? 'currentColor' : 'none'} /><span>{saved ? '29' : '28'}</span></button>
-              <button className="action-button share-button" onClick={() => navigator.clipboard?.writeText(window.location.href)} aria-label="Скопировать ссылку"><Share2 size={15} /><span>Поделиться</span></button>
+              <button className="action-button share-button" onClick={() => { void navigator.clipboard?.writeText(window.location.href).catch(() => undefined); }} aria-label="Скопировать ссылку"><Share2 size={15} /><span>Поделиться</span></button>
             </div>
           </article>
 
-          <div className="brand-orb" aria-label="СКОЛ"><span>С</span><i /></div>
+          <div className="brand-orb" role="img" aria-label="СКОЛ"><span>С</span><i /></div>
           <div className="floating-label"><span className="floating-number">S.</span><span>СТРОИТЕЛЬНАЯ<br />КОМАНДА</span><ArrowUpRight size={15} /></div>
         </section>
         </div>
