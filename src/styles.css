@@ -1619,3 +1619,33 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 @media (prefers-reduced-motion: reduce) {
   .faq-item>p { animation:none; }
 }
+
+
+/* Text-area styling keeps the full request form visually consistent. */
+.contact-form textarea {
+  width:100%;
+  min-width:0;
+  min-height:90px;
+  padding:13px 14px;
+  border:1px solid #ded8ce;
+  border-radius:13px;
+  outline:none;
+  color:#242527;
+  background:rgba(255,255,255,.75);
+  font:400 12px 'Outfit',sans-serif;
+  line-height:1.65;
+  resize:vertical;
+  transition:border .2s,background .2s,box-shadow .2s;
+}
+.contact-form textarea:focus {
+  border-color:#be926d;
+  background:#fff;
+  box-shadow:0 0 0 3px rgba(184,121,77,.09);
+}
+.contact-form textarea::placeholder { color:#aaa399; }
+.dark .contact-form textarea {
+  border-color:#ffffff1b;
+  color:#f2efff;
+  background:#ffffff0b;
+}
+.dark .contact-form textarea::placeholder { color:#9691ad; }
