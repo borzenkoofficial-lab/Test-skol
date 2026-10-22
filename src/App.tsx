@@ -83,32 +83,43 @@ function App() {
 
           <section className="hero" aria-label="СКОЛ — строительные работы">
             <div className="hero-art" aria-hidden="true">
-              <div className="sky-orb orb-one" /><div className="sky-orb orb-two" />
-              <div className="architecture">
-                <div className="building-back"><div className="window-grid" /></div>
-                <div className="building-front"><div className="glass-wall" /><div className="warm-light" /></div>
-                <div className="architecture-rib rib-one" /><div className="architecture-rib rib-two" />
-                <div className="ground-line" />
+              <div className="site-ambient ambient-left" />
+              <div className="site-ambient ambient-right" />
+              <div className="site-ceiling">
+                <i /><i /><i /><i /><i /><i />
               </div>
-              <div className="art-caption">АРХИТЕКТУРА · ПРОСТРАНСТВО · ТОЧНОСТЬ</div>
+              <div className="site-hall">
+                <div className="site-backwall"><div className="site-backgrid" /></div>
+                <div className="site-opening"><i /><i /><i /></div>
+                <div className="site-column column-left" />
+                <div className="site-column column-mid" />
+                <div className="site-column column-right" />
+                <div className="site-scaffold"><i /><i /><i /><i /><b /><b /><b /></div>
+                <div className="site-partition" />
+                <div className="site-floor" />
+                <div className="site-debris"><i /><i /><i /><i /><i /><i /></div>
+              </div>
+              <div className="site-drawing-label drawing-label-top">УЧАСТОК / А-01 <span>РАБОЧАЯ ЗОНА</span></div>
+              <div className="site-drawing-label drawing-label-side">ПЛАН РАБОТ <i /></div>
+              <div className="art-caption">ВИЗУАЛИЗАЦИЯ ПЛОЩАДКИ · НЕ ФОТО ОБЪЕКТА</div>
             </div>
             <div className="hero-shade" />
             <div className="hero-content">
-              <div className="eyebrow"><span className="eyebrow-dot" /> МОСКВА И МОСКОВСКАЯ ОБЛАСТЬ <span className="eyebrow-line" /></div>
-              <h1>Пространство<br /><em>с чистого листа.</em></h1>
-              <p className="hero-description">Демонтаж, подготовка и комплексные работы.<br />Берём на себя сложное — доводим до готовности.</p>
+              <div className="eyebrow"><span className="eyebrow-dot" /> ПОДРЯДНЫЕ РАБОТЫ · МОСКВА И МО <span className="eyebrow-line" /></div>
+              <h1>Демонтаж.<br /><em>Дальше — по плану.</em></h1>
+              <p className="hero-description">Демонтаж, подготовка помещений и отделка. Согласуем объём работ и последовательно ведём объект к следующему этапу.</p>
               <div className="hero-actions">
-                <button className="button-dark" onClick={() => jumpTo('services', 'Услуги')}>Изучить направления <ArrowUpRight size={17} /></button>
-                <button className="button-ghost" onClick={() => jumpTo('projects', 'Проекты')}>Наш подход <ArrowDownRight size={16} /></button>
+                <button className="button-dark" onClick={() => jumpTo('contact', 'Контакты')}>Рассчитать объём работ <ArrowUpRight size={17} /></button>
+                <button className="button-ghost" onClick={() => jumpTo('services', 'Услуги')}>Все направления <ArrowDownRight size={16} /></button>
               </div>
             </div>
             <div className="hero-index"><span>01</span><i /> 04</div>
             <div className="hero-bottom-note"><span className="live-dot" /> ОТ ПОДГОТОВКИ ДО СДАЧИ ОБЪЕКТА</div>
 
 <article className="stat-card glass-card">
-            <div className="card-kicker"><span className="tiny-star"><Sparkles size={12} /></span> ПОДХОД СКОЛ</div>
-            <h2>Сначала<br />ясность. Потом<br /><em>результат.</em></h2>
-            <p>Понятный объём работ, согласованные этапы и одна точка ответственности.</p>
+            <div className="card-kicker"><span className="tiny-star"><Wrench size={12} /></span> ОРГАНИЗАЦИЯ РАБОТ</div>
+            <h2>Объём.<br />Смета.<br /><em>Результат.</em></h2>
+            <p>Фиксируем состав работ, стоимость и последовательность до выхода на объект.</p>
             <div className="stat-bottom"><div><strong>01<span>/</span>03</strong><small>ЭТАПА ПРОЦЕССА</small></div><button className="round-arrow" aria-label="Подробнее о подходе" onClick={() => jumpTo('about', 'О компании')}><ArrowUpRight size={20} /></button></div>
             <div className="stat-orbit" aria-hidden="true" />
           </article>
@@ -153,7 +164,7 @@ function App() {
               <div className="portfolio-art portfolio-art-structure">
                 <span className="portfolio-count">КЕЙС 01 / ДЕМОНТАЖ</span>
                 <div className="portfolio-scene structure-scene" aria-hidden="true"><i /><i /><i /><b /><b /><b /></div>
-                <span className="portfolio-placeholder">МЕСТО ДЛЯ ФОТО ОБЪЕКТА</span>
+                <span className="portfolio-placeholder">ЗАГЛУШКА · НУЖНО ФОТО ОБЪЕКТА</span>
                 <span className="portfolio-art-arrow"><ArrowUpRight size={18} /></span>
               </div>
               <div className="portfolio-meta"><div><span className="tile-index">КОММЕРЧЕСКИЙ ОБЪЕКТ</span><h3>Демонтаж здания</h3></div><span className="portfolio-size">500 м²</span></div>
