@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import {
   ArrowDownRight, ArrowUpRight, Bell, Bookmark, Building2, Check, ChevronDown,
-  CircleHelp, Compass, Grid2X2, Heart, House, Layers3, MapPin, Moon, MoveUpRight,
-  Plus, Search, Settings2, Share2, Sparkles, Sun, Wrench, X
+  CircleHelp, Compass, Grid2X2, Heart, House, Layers3, MapPin, Moon,
+  Share2, Sparkles, Sun, Wrench, X
 } from 'lucide-react';
 
 const navItems = [
