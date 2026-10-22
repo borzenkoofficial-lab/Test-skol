@@ -140,13 +140,58 @@ function App() {
           </div>
         </section>
 
-        <section className="projects-section" id="projects">
+        <section className="portfolio-section" id="projects">
+          <div className="section-heading">
+            <div>
+              <span className="section-kicker">ВЫБРАННЫЕ ЗАДАЧИ</span>
+              <h2>Разный масштаб.<br /><em>Один подход к делу.</em></h2>
+            </div>
+            <p>Несколько направлений работ. Фото и видео объектов добавим отдельно — здесь пока аккуратные визуальные заглушки.</p>
+          </div>
+          <div className="portfolio-grid">
+            <button className="portfolio-card" onClick={() => { setService('Демонтаж'); setShowContact(true); }} aria-label="Обсудить демонтаж здания">
+              <div className="portfolio-art portfolio-art-structure">
+                <span className="portfolio-count">КЕЙС 01 / ДЕМОНТАЖ</span>
+                <div className="portfolio-scene structure-scene" aria-hidden="true"><i /><i /><i /><b /><b /><b /></div>
+                <span className="portfolio-placeholder">МЕСТО ДЛЯ ФОТО ОБЪЕКТА</span>
+                <span className="portfolio-art-arrow"><ArrowUpRight size={18} /></span>
+              </div>
+              <div className="portfolio-meta"><div><span className="tile-index">КОММЕРЧЕСКИЙ ОБЪЕКТ</span><h3>Демонтаж здания</h3></div><span className="portfolio-size">500 м²</span></div>
+              <p>Освобождение пространства под следующий этап работ.</p>
+              <span className="portfolio-link">Обсудить похожую задачу <ArrowUpRight size={15} /></span>
+            </button>
+            <button className="portfolio-card" onClick={() => { setService('Подготовка помещений'); setShowContact(true); }} aria-label="Обсудить демонтаж актового зала">
+              <div className="portfolio-art portfolio-art-interior">
+                <span className="portfolio-count">КЕЙС 02 / ВНУТРЕННИЕ РАБОТЫ</span>
+                <div className="portfolio-scene interior-scene" aria-hidden="true"><i /><i /><i /><b /></div>
+                <span className="portfolio-placeholder">МЕСТО ДЛЯ ФОТО ОБЪЕКТА</span>
+                <span className="portfolio-art-arrow"><ArrowUpRight size={18} /></span>
+              </div>
+              <div className="portfolio-meta"><div><span className="tile-index">ОБЩЕСТВЕННОЕ ПРОСТРАНСТВО</span><h3>Демонтаж актового зала</h3></div></div>
+              <p>Разборка элементов помещения и подготовка к дальнейшим работам.</p>
+              <span className="portfolio-link">Обсудить похожую задачу <ArrowUpRight size={15} /></span>
+            </button>
+            <button className="portfolio-card" onClick={() => { setService('Комплексные работы'); setShowContact(true); }} aria-label="Обсудить фасадные работы">
+              <div className="portfolio-art portfolio-art-facade">
+                <span className="portfolio-count">КЕЙС 03 / ФАСАД</span>
+                <div className="portfolio-scene facade-scene" aria-hidden="true"><i /><i /><i /><i /><b /></div>
+                <span className="portfolio-placeholder">МЕСТО ДЛЯ ФОТО ОБЪЕКТА</span>
+                <span className="portfolio-art-arrow"><ArrowUpRight size={18} /></span>
+              </div>
+              <div className="portfolio-meta"><div><span className="tile-index">ФАСАД И ОГРАЖДЕНИЯ</span><h3>Фасадные работы</h3></div></div>
+              <p>Работы с фасадом, окнами и ограждающими элементами.</p>
+              <span className="portfolio-link">Обсудить похожую задачу <ArrowUpRight size={15} /></span>
+            </button>
+          </div>
+        </section>
+
+        <section className="projects-section" id="about">
           <div className="project-visual">
             <div className="project-visual-top"><span>ПРИНЦИП РАБОТЫ</span><span>№ 001—004</span></div>
             <div className="blueprint"><div className="blueprint-room room-a" /><div className="blueprint-room room-b" /><div className="blueprint-room room-c" /><div className="blueprint-line" /><span className="blueprint-label">ПЛАН → РЕАЛИЗАЦИЯ</span></div>
             <div className="project-visual-bottom"><span>01 — 04</span><span>Чёткая последовательность вместо хаоса</span></div>
           </div>
-          <div className="project-copy" id="about"><span className="section-kicker">КАК МЫ РАБОТАЕМ</span><h2>Не просто<br />выполнить.<br /><em>Организовать.</em></h2><p>Сложный объект требует не только рабочих рук. Нужны последовательность, коммуникация и контроль того, что происходит на площадке.</p><div className="process-list"><div><span>01</span><p><b>Разбираемся</b><small>Задача, ограничения, условия объекта</small></p><ArrowUpRight size={15} /></div><div><span>02</span><p><b>Планируем</b><small>Объём, этапы, организация работ</small></p><ArrowUpRight size={15} /></div><div><span>03</span><p><b>Выполняем</b><small>Координация и связь по ходу проекта</small></p><ArrowUpRight size={15} /></div></div></div>
+          <div className="project-copy"><span className="section-kicker">КАК МЫ РАБОТАЕМ</span><h2>Не просто<br />выполнить.<br /><em>Организовать.</em></h2><p>Сложный объект требует не только рабочих рук. Нужны последовательность, коммуникация и контроль того, что происходит на площадке.</p><div className="process-list"><div><span>01</span><p><b>Разбираемся</b><small>Задача, ограничения, условия объекта</small></p><ArrowUpRight size={15} /></div><div><span>02</span><p><b>Планируем</b><small>Объём, этапы, организация работ</small></p><ArrowUpRight size={15} /></div><div><span>03</span><p><b>Выполняем</b><small>Координация и связь по ходу проекта</small></p><ArrowUpRight size={15} /></div></div></div>
         </section>
 
         <section className="contact-section" id="contact">
