@@ -24,6 +24,7 @@ function App() {
   const [liked, setLiked] = useState(false);
   const [saved, setSaved] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
   const [sent, setSent] = useState(false);
 
   const jumpTo = (id: string, label?: string) => {
@@ -46,14 +47,14 @@ function App() {
           <button className="brand-mark" aria-label="СКОЛ — наверх" onClick={() => jumpTo('top', 'Главная')}><Sparkles size={23} strokeWidth={1.5} /></button>
           <nav className="side-nav" aria-label="Основная навигация">
             {navItems.map(({ label, icon: Icon }) => (
-              <button key={label} className={activeNav === label ? 'nav-icon active' : 'nav-icon'} title={label} aria-label={label} onClick={() => jumpTo(label === 'Контакты' ? 'contact' : label === 'Проекты' ? 'projects' : label === 'Услуги' ? 'services' : label === 'О компании' ? 'about' : 'top', label)}>
+              <button key={label} className={activeNav === label ? 'nav-icon active' : 'nav-icon'} title={label} aria-label={label} aria-current={activeNav === label ? 'page' : undefined} onClick={() => jumpTo(label === 'Контакты' ? 'contact' : label === 'Проекты' ? 'projects' : label === 'Услуги' ? 'services' : label === 'О компании' ? 'about' : 'top', label)}>
                 <Icon size={18} strokeWidth={1.6} />
               </button>
             ))}
           </nav>
           <div className="sidebar-bottom">
             <div className="avatar" aria-label="Команда СКОЛ">С</div>
-            <button className="nav-icon" aria-label="Уведомления"><Bell size={17} /></button>
+            <div className="notification-wrap"><button className={showNotifications ? "nav-icon active" : "nav-icon"} aria-label="Уведомления" aria-expanded={showNotifications} onClick={() => setShowNotifications(value => !value)}><Bell size={17} /></button>{showNotifications && <div className="notice-popover" role="status"><b>Пока без уведомлений</b><span>Новые сообщения по объектам появятся здесь.</span></div>}</div>
             <button className="nav-icon" aria-label="Настройки темы" onClick={() => setDark(!dark)}>{dark ? <Sun size={18} /> : <Moon size={18} />}</button>
           </div>
           <button className="sidebar-toggle" aria-label={sidebarCompact ? "Развернуть панель" : "Свернуть панель"} aria-expanded={!sidebarCompact} onClick={() => setSidebarCompact(value => !value)}><ArrowUpRight size={15} /></button>
@@ -152,7 +153,7 @@ function App() {
         <footer className="footer"><button className="footer-brand" onClick={() => jumpTo('top', 'Главная')}>СКОЛ<span>®</span></button><span>ДЕМОНТАЖ · ПОДГОТОВКА · КОМПЛЕКСНЫЕ РАБОТЫ</span><button onClick={() => setShowContact(true)}>Связаться <ArrowUpRight size={14} /></button><span>© 2026</span></footer>
       </section>
 
-      {showContact && <div className="modal-backdrop" onClick={() => setShowContact(false)}><div className="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick={e => e.stopPropagation()}><button className="modal-close" onClick={() => setShowContact(false)} aria-label="Закрыть"><X size={19} /></button><span className="section-kicker">ОБСУДИМ ОБЪЕКТ</span><h2 id="modal-title">С чего начнём?</h2><p>Уже выбрано направление: <b>{service}</b>. Тип объекта — <b>{objectType.toLowerCase()}</b>, ориентир бюджета — <b>{budget.toLowerCase()}</b>.</p><button className="button-dark modal-action" onClick={() => { setShowContact(false); jumpTo('contact'); }}>Перейти к форме <ArrowUpRight size={17} /></button><small>Форма демонстрационная: отправка данных пока не подключена.</small></div></div>}
+      {showContact && <div className="modal-backdrop" onClick={() => setShowContact(false)}><div className="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick={e => e.stopPropagation()}><button className="modal-close" onClick={() => setShowContact(false)} aria-label="Закрыть"><X size={19} /></button><span className="section-kicker">ОБСУДИМ ОБЪЕКТ</span><h2 id="modal-title">С чего начнём?</h2><p>Уже выбрано направление: <b>{service}</b>. Тип объекта — <b>{objectType.toLowerCase()}</b>, ориентир бюджета — <b>{budget.toLowerCase()}</b>.</p><button className="button-dark modal-action" onClick={() => { setShowContact(false); jumpTo('contact', 'Контакты'); }}>Перейти к форме <ArrowUpRight size={17} /></button><small>Форма демонстрационная: отправка данных пока не подключена.</small></div></div>}
     </main>
   );
 }
