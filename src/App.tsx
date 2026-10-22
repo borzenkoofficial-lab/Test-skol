@@ -16,6 +16,7 @@ const navItems = [
 function App() {
   const [dark, setDark] = useState(false);
   const [activeNav, setActiveNav] = useState('Главная');
+  const [sidebarCompact, setSidebarCompact] = useState(false);
   const [service, setService] = useState('Комплексные работы');
   const [objectType, setObjectType] = useState('Коммерческий');
   const [budget, setBudget] = useState('От 1 млн ₽');
@@ -41,7 +42,7 @@ function App() {
       <section className="frame" id="top">
         <div className="frame-glow" aria-hidden="true" />
         <div className="workspace">
-        <aside className="sidebar">
+        <aside className={sidebarCompact ? "sidebar compact" : "sidebar"}>
           <button className="brand-mark" aria-label="СКОЛ — наверх" onClick={() => jumpTo('top', 'Главная')}><Sparkles size={23} strokeWidth={1.5} /></button>
           <nav className="side-nav" aria-label="Основная навигация">
             {navItems.map(({ label, icon: Icon }) => (
@@ -55,7 +56,7 @@ function App() {
             <button className="nav-icon" aria-label="Уведомления"><Bell size={17} /></button>
             <button className="nav-icon" aria-label="Настройки темы" onClick={() => setDark(!dark)}>{dark ? <Sun size={18} /> : <Moon size={18} />}</button>
           </div>
-          <button className="sidebar-toggle" aria-label="Свернуть панель" onClick={() => document.querySelector('.sidebar')?.classList.toggle('compact')}><ArrowUpRight size={15} /></button>
+          <button className="sidebar-toggle" aria-label={sidebarCompact ? "Развернуть панель" : "Свернуть панель"} aria-expanded={!sidebarCompact} onClick={() => setSidebarCompact(value => !value)}><ArrowUpRight size={15} /></button>
         </aside>
 
         <div className="dashboard">
@@ -92,9 +93,8 @@ function App() {
             </div>
             <div className="hero-index"><span>01</span><i /> 04</div>
             <div className="hero-bottom-note"><span className="live-dot" /> ОТ ПОДГОТОВКИ ДО СДАЧИ ОБЪЕКТА</div>
-          </section>
 
-          <article className="stat-card glass-card">
+<article className="stat-card glass-card">
             <div className="card-kicker"><span className="tiny-star"><Sparkles size={12} /></span> ПОДХОД СКОЛ</div>
             <h2>Сначала<br />ясность. Потом<br /><em>результат.</em></h2>
             <p>Понятный объём работ, согласованные этапы и одна точка ответственности.</p>
