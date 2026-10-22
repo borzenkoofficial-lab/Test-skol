@@ -367,7 +367,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .rib-one { top: 0; right: 0; width: 75%; height: 65%; transform: rotate(-5deg); border-color: #dce5f5; border-radius: 50% 48% 0 0 / 50% 48% 0 0; }
 .rib-two { bottom: -2%; left: -3%; width: 100%; height: 45%; border-width: 8px; border-color: #aebdd8; border-radius: 48% 38% 0 0 / 55% 50% 0 0; }
 .ground-line { position: absolute; bottom: 0; left: -10%; width: 120%; height: 12%; transform: skewY(-2deg); background: linear-gradient(180deg, #343c58, #1d2034); }
-.art-caption { position: absolute; right: 4%; bottom: 2%; color: #fff9; font-size: 8px; letter-spacing: .22em; }
+.art-caption { position: absolute; right: 4%; bottom: clamp(340px, 38%, 390px); color: #fff9; font-size: 8px; letter-spacing: .22em; }
 .hero-shade {
   position: absolute;
   z-index: 1;
@@ -428,7 +428,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .hero-index { position: absolute; z-index: 3; top: 25px; right: 28px; display: flex; align-items: center; gap: 9px; color: #fff9; font-size: 10px; letter-spacing: .1em; }
 .hero-index span { color: #fff; font-size: 14px; }
 .hero-index i { width: 28px; height: 1px; background: #fff8; }
-.hero-bottom-note { position: absolute; z-index: 3; bottom: 20px; left: clamp(28px, 4vw, 58px); display: flex; align-items: center; gap: 10px; color: #fffbd0c9; font-size: 9px; letter-spacing: .13em; }
+.hero-bottom-note { position: absolute; z-index: 3; bottom: clamp(310px, 34%, 360px); left: clamp(28px, 4vw, 58px); display: flex; align-items: center; gap: 10px; color: #fffbd0c9; font-size: 9px; letter-spacing: .13em; }
 .hero-bottom-note .live-dot { background: #b6edc7; box-shadow: 0 0 0 4px #b6edc72a; }
 
 /* Floating cards live inside the hero, so their positions are relative to the image, not the whole page. */
@@ -758,7 +758,8 @@ button:disabled { cursor: not-allowed; opacity: .55; }
   .button-ghost { gap: 5px; padding: 10px 7px; }
   .architecture { right: -22%; bottom: 25%; width: 118%; height: 42%; opacity: .95; }
   .hero-index { top: auto; right: 17px; bottom: 330px; }
-  .hero-bottom-note { bottom: 17px; left: 20px; font-size: 7px; letter-spacing: .08em; }
+  .hero-bottom-note { bottom: 260px; left: 20px; font-size: 7px; letter-spacing: .08em; }
+  .art-caption { display: none; }
   .floating-label { display: none; }
   .stat-card {
     bottom: 0;
