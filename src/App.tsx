@@ -1,8 +1,8 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import {
-  ArrowDownRight, ArrowUpRight, Bell, Bookmark, Building2, Check, ChevronDown,
-  CircleHelp, Compass, Grid2X2, Heart, House, Layers3, MapPin, Moon,
-  Share2, Sparkles, Sun, Wrench, X
+  ArrowDownRight, ArrowUpRight, Bell, Building2, Check, ChevronDown,
+  CircleHelp, Compass, Grid2X2, House, Layers3, MapPin, Moon,
+  Sparkles, Sun, Wrench, X
 } from 'lucide-react';
 
 const navItems = [
@@ -21,8 +21,6 @@ function App() {
   const [objectType, setObjectType] = useState('Коммерческий');
   const [budget, setBudget] = useState('От 1 млн ₽');
   const [query, setQuery] = useState('');
-  const [liked, setLiked] = useState(false);
-  const [saved, setSaved] = useState(false);
   const [showContact, setShowContact] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [sent, setSent] = useState(false);
@@ -111,20 +109,19 @@ function App() {
             <div className="card-kicker"><span className="tiny-star"><Sparkles size={12} /></span> ПОДХОД СКОЛ</div>
             <h2>Сначала<br />ясность. Потом<br /><em>результат.</em></h2>
             <p>Понятный объём работ, согласованные этапы и одна точка ответственности.</p>
-            <div className="stat-bottom"><div><strong>01<span>/</span>04</strong><small>ЭТАПА РАБОТЫ</small></div><button className="round-arrow" aria-label="Подробнее о подходе" onClick={() => jumpTo('about', 'О компании')}><ArrowUpRight size={20} /></button></div>
+            <div className="stat-bottom"><div><strong>01<span>/</span>03</strong><small>ЭТАПА ПРОЦЕССА</small></div><button className="round-arrow" aria-label="Подробнее о подходе" onClick={() => jumpTo('about', 'О компании')}><ArrowUpRight size={20} /></button></div>
             <div className="stat-orbit" aria-hidden="true" />
           </article>
 
           <article className="featured-card glass-card">
             <div className="featured-top"><span className="featured-label"><span className="live-dot" /> ФОКУС КОМАНДЫ</span><button className="round-arrow small" aria-label="Обсудить проект" onClick={() => setShowContact(true)}><ArrowUpRight size={17} /></button></div>
-            <div className="featured-title">Подготовка<br />пространства</div>
-            <p>Освобождаем объект от лишнего и готовим надёжную основу для следующего этапа.</p>
+            <div className="featured-title">Объект под<br />контролем.</div>
+            <p>Согласованный состав работ, понятная последовательность и одна точка связи по проекту.</p>
             <div className="feature-tags"><span><Check size={12} /> План работ</span><span><Check size={12} /> Контроль этапов</span><span><Check size={12} /> Одна команда</span></div>
             <div className="feature-divider" />
-            <div className="featured-actions">
-              <button className={liked ? 'action-button selected' : 'action-button'} onClick={() => setLiked(!liked)} aria-label="Отметить нравится"><Heart size={15} fill={liked ? 'currentColor' : 'none'} /><span>{liked ? '13' : '12'}</span></button>
-              <button className={saved ? 'action-button selected' : 'action-button'} onClick={() => setSaved(!saved)} aria-label="Сохранить"><Bookmark size={15} fill={saved ? 'currentColor' : 'none'} /><span>{saved ? '29' : '28'}</span></button>
-              <button className="action-button share-button" onClick={() => { void navigator.clipboard?.writeText(window.location.href).catch(() => undefined); }} aria-label="Скопировать ссылку"><Share2 size={15} /><span>Поделиться</span></button>
+            <div className="featured-footer">
+              <button className="featured-link" onClick={() => jumpTo('services', 'Услуги')}>Направления <ArrowUpRight size={14} /></button>
+              <button className="featured-cta" onClick={() => setShowContact(true)} aria-label="Обсудить объект">Обсудить <ArrowUpRight size={15} /></button>
             </div>
           </article>
 
