@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import {
   ArrowDownRight, ArrowUpRight, Bell, Bookmark, Building2, Check, ChevronDown,
   CircleHelp, Compass, Grid2X2, Heart, House, Layers3, MapPin, Moon,
@@ -30,7 +30,7 @@ function App() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const submitBrief = (event: React.FormEvent<HTMLFormElement>) => {
+  const submitBrief = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSent(true);
   };
