@@ -2,7 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react';
 import {
   ArrowDownRight, ArrowUpRight, Bell, Building2, Check, ChevronDown,
   CircleHelp, Compass, Grid2X2, House, Layers3, MapPin, Moon,
-  Sparkles, Sun, Wrench, X
+  Sun, Wrench, X
 } from 'lucide-react';
 
 const navItems = [
@@ -54,7 +54,7 @@ function App() {
         <div className="frame-glow" aria-hidden="true" />
         <div className={sidebarCompact ? "workspace sidebar-is-compact" : "workspace"}>
         <aside className={sidebarCompact ? "sidebar compact" : "sidebar"}>
-          <button className="brand-mark" aria-label="СКОЛ — наверх" onClick={() => jumpTo('top', 'Главная')}><Sparkles size={23} strokeWidth={1.5} /></button>
+          <button className="brand-mark" aria-label="СКОЛ — наверх" onClick={() => jumpTo('top', 'Главная')}><Wrench size={21} strokeWidth={1.5} /></button>
           <nav className="side-nav" aria-label="Основная навигация">
             {navItems.map(({ label, icon: Icon }) => (
               <button key={label} className={activeNav === label ? 'nav-icon active' : 'nav-icon'} title={label} aria-label={label} aria-current={activeNav === label ? 'page' : undefined} onClick={() => jumpTo(label === 'Контакты' ? 'contact' : label === 'Проекты' ? 'projects' : label === 'Услуги' ? 'services' : label === 'О компании' ? 'about' : 'top', label)}>
@@ -72,7 +72,7 @@ function App() {
 
         <div className="dashboard">
           <header className="topbar">
-            <button className="top-pill top-pill-primary" onClick={() => jumpTo('services', 'Услуги')}><span className="pill-spark"><Sparkles size={13} /></span>Наши услуги <ArrowUpRight size={14} /></button>
+            <button className="top-pill top-pill-primary" onClick={() => jumpTo('services', 'Услуги')}><span className="pill-spark"><Wrench size={13} /></span>Наши услуги <ArrowUpRight size={14} /></button>
             <div className="filters">
               <label className="filter-field"><span><MapPin size={11} /> Направление</span><select value={service} onChange={e => setService(e.target.value)}><option>Комплексные работы</option><option>Демонтаж</option><option>Подготовка помещений</option><option>Отделка</option></select><ChevronDown size={13} /></label>
               <label className="filter-field"><span><Building2 size={11} /> Тип объекта</span><select value={objectType} onChange={e => setObjectType(e.target.value)}><option>Коммерческий</option><option>Частный</option><option>Офис</option><option>Ритейл</option><option>Промышленный</option></select><ChevronDown size={13} /></label>
@@ -113,7 +113,7 @@ function App() {
                 <button className="button-ghost" onClick={() => jumpTo('services', 'Услуги')}>Все направления <ArrowDownRight size={16} /></button>
               </div>
             </div>
-            <div className="hero-index"><span>01</span><i /> 04</div>
+            <div className="hero-index"><span>ЛИСТ 01</span><i /> ОБЪЕКТ</div>
             <div className="hero-bottom-note"><span className="live-dot" /> ОТ ПОДГОТОВКИ ДО СДАЧИ ОБЪЕКТА</div>
 
 <article className="stat-card glass-card">
