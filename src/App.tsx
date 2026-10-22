@@ -40,6 +40,7 @@ function App() {
       <div className="metal-grain" aria-hidden="true" />
       <section className="frame" id="top">
         <div className="frame-glow" aria-hidden="true" />
+        <div className="workspace">
         <aside className="sidebar">
           <button className="brand-mark" aria-label="СКОЛ — наверх" onClick={() => jumpTo('top', 'Главная')}><Sparkles size={23} strokeWidth={1.5} /></button>
           <nav className="side-nav" aria-label="Основная навигация">
@@ -116,6 +117,7 @@ function App() {
 
           <div className="brand-orb" aria-label="СКОЛ"><span>С</span><i /></div>
           <div className="floating-label"><span className="floating-number">S.</span><span>СТРОИТЕЛЬНАЯ<br />КОМАНДА</span><ArrowUpRight size={15} /></div>
+        </div>
         </div>
 
         <section className="lower-content" id="services">
