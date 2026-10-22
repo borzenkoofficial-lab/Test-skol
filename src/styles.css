@@ -141,7 +141,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
   box-shadow: 0 4px 14px #302a7217;
 }
 .notification-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
-.notice-popover { position: absolute; z-index: 20; right: calc(100% + 12px); bottom: -12px; display: grid; width: 215px; gap: 6px; padding: 14px 16px; border: 1px solid #ffffffad; border-radius: 17px; color: var(--ink); background: var(--frame); box-shadow: 0 12px 32px #24203d20; font-size: 11px; line-height: 1.5; }
+.notice-popover { position: absolute; z-index: 20; right: auto; left: calc(100% + 12px); bottom: -12px; display: grid; width: 215px; gap: 6px; padding: 14px 16px; border: 1px solid #ffffffad; border-radius: 17px; color: var(--ink); background: var(--frame); box-shadow: 0 12px 32px #24203d20; font-size: 11px; line-height: 1.5; }
 .notice-popover b { font-size: 12px; font-weight: 600; }
 .notice-popover span { color: var(--muted); }
 .sidebar-bottom {
@@ -716,7 +716,7 @@ button:disabled { cursor: not-allowed; opacity: .55; }
   .side-nav { flex-direction: row; gap: 2px; }
   .nav-icon, .sidebar.compact .nav-icon { width: 32px; height: 32px; }
   .sidebar-bottom { flex-direction: row; gap: 2px; margin: 0; }
-  .notice-popover { right: 0; bottom: auto; top: calc(100% + 9px); width: min(215px, calc(100vw - 55px)); }
+  .notice-popover { right: 0; left: auto; bottom: auto; top: calc(100% + 9px); width: min(215px, calc(100vw - 55px)); }
   .sidebar-bottom .avatar { width: 29px; height: 29px; margin: 0; }
   .sidebar-toggle { display: none; }
   .dashboard {
