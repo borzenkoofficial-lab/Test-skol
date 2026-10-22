@@ -143,7 +143,7 @@ function App() {
         </div>
 
         <section className="lower-content" id="services">
-          <div className="section-heading"><div><span className="section-kicker">ЧЕМ МЫ ПОЛЕЗНЫ</span><h2>Работы без<br /><em>лишних неизвестных.</em></h2></div><p>Выбираем решение под объект, а не подгоняем объект под шаблон.</p></div>
+          <div className="section-heading"><div><span className="section-kicker">ЧЕМ МЫ ПОЛЕЗНЫ</span><h2>Виды работ<br /><em>на одном объекте.</em></h2></div><p>Отдельные задачи или комплексный подряд. Состав работ согласуем после оценки состояния и условий площадки.</p></div>
           <div className="service-grid">
             <button className="service-tile tile-large" onClick={() => { setService('Демонтаж'); setShowContact(true); }}><span className="tile-index">01 / ОСНОВА</span><div className="tile-icon"><Layers3 size={21} /></div><h3>Демонтаж<br />и разборка</h3><p>Аккуратно освобождаем пространство и учитываем особенности объекта.</p><span className="tile-link">Обсудить задачу <ArrowUpRight size={16} /></span><div className="tile-lines" /></button>
             <button className="service-tile" onClick={() => { setService('Подготовка помещений'); setShowContact(true); }}><span className="tile-index">02 / ПОДГОТОВКА</span><div className="tile-icon"><Wrench size={21} /></div><h3>Подготовка<br />помещений</h3><p>Подготавливаем площадку к следующему этапу работ.</p><span className="tile-link">Подробнее <ArrowUpRight size={16} /></span></button>
@@ -155,9 +155,9 @@ function App() {
           <div className="section-heading">
             <div>
               <span className="section-kicker">ВЫБРАННЫЕ ЗАДАЧИ</span>
-              <h2>Разный масштаб.<br /><em>Один подход к делу.</em></h2>
+              <h2>От демонтажа<br /><em>до подготовки.</em></h2>
             </div>
-            <p>Несколько направлений работ. Фото и видео объектов добавим отдельно — здесь пока аккуратные визуальные заглушки.</p>
+            <p>Ниже — примеры типов задач. Иллюстрации временные: фотографии объектов заменим на реальные материалы.</p>
           </div>
           <div className="portfolio-grid">
             <button className="portfolio-card" onClick={() => { setService('Демонтаж'); setShowContact(true); }} aria-label="Обсудить демонтаж здания">
@@ -173,7 +173,7 @@ function App() {
             </button>
             <button className="portfolio-card" onClick={() => { setService('Подготовка помещений'); setShowContact(true); }} aria-label="Обсудить демонтаж актового зала">
               <div className="portfolio-art portfolio-art-interior">
-                <span className="portfolio-count">КЕЙС 02 / ВНУТРЕННИЕ РАБОТЫ</span>
+                <span className="portfolio-count">КЕЙС 02 / ДЕМОНТАЖ</span>
                 <div className="portfolio-scene interior-scene" aria-hidden="true"><i /><i /><i /><b /></div>
                 <span className="portfolio-placeholder">МЕСТО ДЛЯ ФОТО ОБЪЕКТА</span>
                 <span className="portfolio-art-arrow"><ArrowUpRight size={18} /></span>
@@ -189,8 +189,8 @@ function App() {
                 <span className="portfolio-placeholder">МЕСТО ДЛЯ ФОТО ОБЪЕКТА</span>
                 <span className="portfolio-art-arrow"><ArrowUpRight size={18} /></span>
               </div>
-              <div className="portfolio-meta"><div><span className="tile-index">ФАСАД И ОГРАЖДЕНИЯ</span><h3>Фасадные работы</h3></div></div>
-              <p>Работы с фасадом, окнами и ограждающими элементами.</p>
+              <div className="portfolio-meta"><div><span className="tile-index">ФАСАД И ОГРАЖДЕНИЯ</span><h3>Демонтаж и реставрация фасада</h3></div></div>
+              <p>Демонтаж фасадных элементов, работы с окнами и ограждениями в рамках проекта.</p>
               <span className="portfolio-link">Обсудить похожую задачу <ArrowUpRight size={15} /></span>
             </button>
           </div>
@@ -202,11 +202,11 @@ function App() {
             <div className="blueprint"><div className="blueprint-room room-a" /><div className="blueprint-room room-b" /><div className="blueprint-room room-c" /><div className="blueprint-line" /><span className="blueprint-label">ПЛАН → РЕАЛИЗАЦИЯ</span></div>
             <div className="project-visual-bottom"><span>01 — 04</span><span>Чёткая последовательность вместо хаоса</span></div>
           </div>
-          <div className="project-copy"><span className="section-kicker">КАК МЫ РАБОТАЕМ</span><h2>Не просто<br />выполнить.<br /><em>Организовать.</em></h2><p>Сложный объект требует не только рабочих рук. Нужны последовательность, коммуникация и контроль того, что происходит на площадке.</p><div className="process-list"><div><span>01</span><p><b>Разбираемся</b><small>Задача, ограничения, условия объекта</small></p><ArrowUpRight size={15} /></div><div><span>02</span><p><b>Планируем</b><small>Объём, этапы, организация работ</small></p><ArrowUpRight size={15} /></div><div><span>03</span><p><b>Выполняем</b><small>Координация и связь по ходу проекта</small></p><ArrowUpRight size={15} /></div></div></div>
+          <div className="project-copy"><span className="section-kicker">ПОРЯДОК НА ПЛОЩАДКЕ</span><h2>Работа по этапам.<br /><em>Без хаоса.</em></h2><p>Перед началом определяем границы демонтажа, условия доступа, последовательность работ и порядок взаимодействия на объекте.</p><div className="process-list"><div><span>01</span><p><b>Разбираемся</b><small>Задача, ограничения, условия объекта</small></p><ArrowUpRight size={15} /></div><div><span>02</span><p><b>Планируем</b><small>Объём, этапы, организация работ</small></p><ArrowUpRight size={15} /></div><div><span>03</span><p><b>Выполняем</b><small>Координация и связь по ходу проекта</small></p><ArrowUpRight size={15} /></div></div></div>
         </section>
 
         <section className="contact-section" id="contact">
-          <div><span className="section-kicker">ЕСТЬ ОБЪЕКТ?</span><h2>Давайте обсудим<br /><em>задачу по делу.</em></h2><p>Расскажите, что нужно сделать. Уточним вводные и предложим следующий шаг.</p></div>
+          <div><span className="section-kicker">ЕСТЬ ОБЪЕКТ?</span><h2>Расскажите<br /><em>об объекте.</em></h2><p>Опишите помещение, объём и сроки. Уточним исходные данные и обсудим состав работ для расчёта.</p></div>
           <form className="contact-form" onSubmit={submitBrief}>
             <label>Что нужно сделать?<input value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, демонтаж офиса" required /></label>
             <div className="form-row"><label>Как к вам обращаться?<input placeholder="Ваше имя" required /></label><label>Телефон или Telegram<input placeholder="+7 / @username" required /></label></div>
